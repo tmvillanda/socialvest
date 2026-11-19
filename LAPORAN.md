@@ -1,9 +1,4 @@
-# Laporan Proyek UAS — Socialvest
-
-**Nama:** Tri Mayluddin Villanda
-**NIM:** 230170114
-**Mata kuliah:** Pemrograman Mobile
-**Bentuk karya:** Aplikasi Android native (Kotlin) + Firebase
+# Laporan Proyek Socialvest
 
 ---
 
