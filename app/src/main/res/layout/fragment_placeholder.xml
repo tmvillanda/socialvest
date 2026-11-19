@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/spacing_large"
+        android:paddingTop="@dimen/spacing_xlarge"
+        android:paddingBottom="@dimen/spacing_xlarge">
+
+        <ImageView
+            android:id="@+id/placeholder_icon"
+            android:layout_width="@dimen/icon_large"
+            android:layout_height="@dimen/icon_large"
+            android:contentDescription="@string/content_desc_module_icon"
+            app:tint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/placeholder_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:textAppearance="@style/TextAppearance.Socialvest.ScreenTitle"
+            android:textColor="?attr/colorOnBackground"
+            tools:text="Home" />
+
+        <TextView
+            android:id="@+id/placeholder_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:lineSpacingExtra="4dp"
+            android:textAppearance="@style/TextAppearance.Socialvest.Body"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            tools:text="Ringkasan portfolio akan tampil di sini." />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Socialvest.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_large"
+            app:cardBackgroundColor="?attr/colorSecondaryContainer">
+
+            <TextView
+                android:id="@+id/placeholder_phase_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_medium"
+                android:text="@string/placeholder_phase_note"
+                android:textAppearance="@style/TextAppearance.Socialvest.Caption"
+                android:textColor="?attr/colorOnSecondaryContainer" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.socialvest.app.ui.home.HomeFragment"
+        android:label="@string/nav_home" />
+
+    <fragment
+        android:id="@+id/socialFragment"
+        android:name="com.socialvest.app.ui.social.SocialFragment"
+        android:label="@string/nav_social" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.socialvest.app.ui.search.SearchFragment"
+        android:label="@string/nav_search" />
+
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.socialvest.app.ui.learning.LearnFragment"
+        android:label="@string/nav_learn" />
+
+    <!-- The portfolio tab reuses the Phase 3 Invest screen and its repository. -->
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="com.socialvest.app.ui.invest.InvestFragment"
+        android:label="@string/nav_portfolio" />
+
+    <!-- Reached from the drawer, not from the bottom navigation. -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.socialvest.app.ui.profile.ProfileFragment"
+        android:label="@string/profile_title" />
+
+</navigation>

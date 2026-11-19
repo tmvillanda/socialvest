@@ -1,0 +1,427 @@
+<resources>
+    <string name="app_name">Socialvest</string>
+    <string name="app_tagline">Invest Together, Learn Together, Grow Together.</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_social">Social</string>
+    <string name="nav_search">Cari</string>
+    <string name="nav_learn">Learn</string>
+    <string name="nav_portfolio">Portofolio</string>
+
+    <!-- Module titles -->
+    <string name="home_title">Home</string>
+    <string name="invest_title">Portofolio</string>
+    <string name="social_title">Social</string>
+    <string name="learn_title">Learn</string>
+    <string name="profile_title">Profil</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">Buka menu</string>
+    <string name="drawer_close">Tutup menu</string>
+    <string name="drawer_profile">Profil saya</string>
+    <string name="drawer_account_security">Akun &amp; keamanan</string>
+    <string name="drawer_settings">Pengaturan</string>
+    <string name="drawer_theme">Tema aplikasi</string>
+    <string name="drawer_notifications">Notifikasi</string>
+    <string name="drawer_language">Bahasa</string>
+    <string name="drawer_privacy">Privasi</string>
+    <string name="drawer_terms">Syarat penggunaan</string>
+    <string name="drawer_privacy_policy">Kebijakan privasi</string>
+    <string name="drawer_logout">Keluar</string>
+    <string name="drawer_notifications_unavailable">Belum tersedia. Aplikasi belum mengirim notifikasi push.</string>
+    <string name="drawer_language_value">Indonesia</string>
+    <string name="drawer_language_message">Aplikasi saat ini hanya tersedia dalam Bahasa Indonesia.</string>
+    <string name="drawer_theme_title">Tema aplikasi</string>
+    <string name="drawer_theme_system">Ikuti sistem</string>
+    <string name="drawer_theme_light">Terang</string>
+    <string name="drawer_theme_dark">Gelap</string>
+    <string name="close">Tutup</string>
+
+    <!-- Search (Phase 8) -->
+    <string name="search_title">Cari</string>
+    <string name="search_hint">Cari nama atau ticker</string>
+    <string name="search_filter_all">Semua</string>
+    <string name="search_filter_stock">Saham</string>
+    <string name="search_filter_crypto">Kripto</string>
+    <string name="search_refresh">Perbarui harga</string>
+    <string name="search_note">Daftar simbol bersifat tetap. Saat tab dibuka dan saat Anda menekan Perbarui harga, kutipan diambil bertahap dari Yahoo Finance atau CoinGecko lalu dipakai sebagai nilai awal formulir. Harga bukan real-time dan tidak berubah otomatis.</string>
+    <string name="search_empty">Tidak ada simbol yang cocok. Coba nama atau ticker lain.</string>
+    <string name="search_count">%1$d simbol</string>
+    <string name="search_price_missing">Harga belum diambil</string>
+    <string name="search_price_unavailable">Harga tidak tersedia</string>
+    <string name="search_quote_source">%1$s · %2$s</string>
+    <string name="search_quote_progress">Mengambil harga %1$d/%2$d…</string>
+    <string name="search_quote_pending">%1$d simbol belum diambil — tekan Perbarui harga.</string>
+<string name="search_quote_batched">Diambil bertahap %1$d saham per permintaan agar tetap ramah ke sumber gratis.</string>
+    <string name="search_quote_failed">%1$d harga gagal diambil dan tetap kosong.</string>
+    <string name="search_quote_done">Harga diperbarui pada %1$s.</string>
+    <string name="search_source_yahoo">Yahoo Finance</string>
+    <string name="search_source_coingecko">CoinGecko</string>
+    <string name="search_result_hint">Ketuk simbol untuk membuka formulir aset.</string>
+    <string name="search_ticker_format">%1$s · %2$s</string>
+
+    <!-- Home dashboard (Phase 6) -->
+    <string name="home_greeting">Halo, %1$s</string>
+    <string name="home_greeting_anonymous">Halo</string>
+    <string name="home_username_format">\@%1$s</string>
+    <string name="home_portfolio_title">Portfolio Anda</string>
+    <string name="home_portfolio_note">Nilai memakai harga tersimpan terakhir (manual atau hasil refresh), bukan harga pasar real-time.</string>
+    <string name="home_portfolio_empty">Belum ada aset tercatat. Mulai catat investasi pertama Anda di tab Portofolio atau lewat tab Cari.</string>
+    <string name="home_open_invest">Buka Portofolio</string>
+    <string name="home_shortcuts_title">Menu cepat</string>
+    <string name="home_shortcut_invest">Portofolio</string>
+    <string name="home_shortcut_social">Social</string>
+    <string name="home_shortcut_learn">Learn</string>
+    <string name="home_posts_title">Postingan terbaru</string>
+    <string name="home_posts_empty">Belum ada postingan komunitas. Jadilah yang pertama di tab Social.</string>
+    <string name="home_courses_title">Kursus unggulan</string>
+    <string name="home_courses_empty">Belum ada kursus yang dipublikasikan.</string>
+    <string name="home_see_all">Lihat semua</string>
+    <string name="home_post_counters">%1$d suka · %2$d komentar</string>
+    <string name="home_error">Gagal memuat ringkasan Home.</string>
+    <string name="home_retry">Coba lagi</string>
+
+    <!-- Phase 0 placeholder copy -->
+    <string name="home_placeholder">Ringkasan portfolio, profit/loss, post komunitas terbaru, dan rekomendasi course akan tampil di sini.</string>
+    <string name="invest_placeholder">Pencatatan aset, transaksi BUY/SELL, dan perhitungan portfolio akan tampil di sini.</string>
+    <string name="social_placeholder">Feed komunitas, unggah post, like, dan komentar akan tampil di sini.</string>
+    <string name="learn_placeholder">Katalog course, detail materi, pemutar video YouTube, dan progres belajar akan tampil di sini.</string>
+    <string name="profile_placeholder">Profil pengguna, pengaturan, dan informasi akun akan tampil di sini.</string>
+    <string name="placeholder_phase_note">Fase 0: navigasi dan tema sudah aktif. Isi modul ini diimplementasikan pada fase berikutnya.</string>
+
+    <!-- Required financial disclaimer (see project brief section 10) -->
+    <string name="disclaimer_finance">Informasi, diskusi, dan materi di Socialvest disediakan untuk tujuan informasi dan edukasi, bukan merupakan rekomendasi atau nasihat keuangan untuk membeli maupun menjual instrumen investasi. Keputusan investasi merupakan tanggung jawab masing-masing pengguna. Harga yang dimasukkan secara manual bukan harga pasar real-time.</string>
+
+    <string name="content_desc_module_icon">Ikon modul</string>
+
+    <!-- Authentication -->
+    <string name="back">Kembali</string>
+    <string name="login_title">Masuk</string>
+    <string name="login_subtitle">Gunakan akun Socialvest untuk mengakses portfolio, komunitas, dan materi belajar.</string>
+    <string name="login_button">Masuk</string>
+    <string name="login_no_account">Belum punya akun?</string>
+
+    <string name="register_title">Daftar</string>
+    <string name="register_subtitle">Buat akun untuk mulai mencatat investasi dan belajar bersama komunitas.</string>
+    <string name="register_button">Buat Akun</string>
+    <string name="register_have_account">Sudah punya akun?</string>
+
+    <string name="label_email">Email</string>
+    <string name="label_password">Kata sandi</string>
+    <string name="label_confirm_password">Ulangi kata sandi</string>
+    <string name="label_full_name">Nama lengkap</string>
+    <string name="label_username">Username</string>
+    <string name="label_bio">Bio</string>
+
+    <string name="helper_username">3–20 karakter: huruf kecil, angka, atau garis bawah.</string>
+    <string name="helper_password">Minimal 6 karakter.</string>
+
+    <!-- Profile -->
+    <string name="edit_profile_title">Edit Profil</string>
+    <string name="save_button">Simpan</string>
+    <string name="logout_button">Keluar</string>
+    <string name="logout_confirm_title">Keluar dari akun?</string>
+    <string name="logout_confirm_message">Anda perlu masuk kembali untuk mengakses portfolio dan progres belajar.</string>
+    <string name="cancel">Batal</string>
+    <string name="profile_username_format">\@%1$s</string>
+    <string name="profile_missing_message">Data profil belum tersedia. Lengkapi profil Anda agar dapat digunakan di komunitas.</string>
+    <string name="complete_profile">Lengkapi Profil</string>
+    <string name="profile_no_bio">Belum menambahkan bio.</string>
+    <string name="profile_saved">Profil berhasil diperbarui.</string>
+    <string name="profile_privacy_note">Nilai portfolio Anda bersifat privat dan tidak ditampilkan ke pengguna lain.</string>
+    <string name="disclaimer_title">Catatan penting</string>
+
+    <!-- Settings / privacy (Phase 6) -->
+    <string name="profile_settings">Pengaturan &amp; privasi</string>
+    <string name="settings_title">Pengaturan &amp; privasi</string>
+    <string name="settings_account_section">Akun</string>
+    <string name="settings_name_label">Nama</string>
+    <string name="settings_username_label">Username</string>
+    <string name="settings_email_label">Email</string>
+    <string name="settings_email_note">Email hanya dipakai untuk masuk dan tidak disimpan pada dokumen profil yang dapat dilihat pengguna lain.</string>
+    <string name="settings_privacy_section">Privasi</string>
+    <string name="settings_privacy_portfolio">Nilai portfolio, aset, dan riwayat transaksi hanya dapat dibaca oleh akun Anda sendiri.</string>
+    <string name="settings_privacy_profile">Nama, username, bio, dan waktu bergabung dapat dilihat pengguna lain yang membuka profil publik Anda.</string>
+    <string name="settings_privacy_posts">Postingan dan komentar dapat dibaca pengguna lain yang sudah masuk. Postingan adalah opini pengguna, bukan nasihat keuangan terverifikasi.</string>
+    <string name="settings_privacy_progress">Progres belajar dan daftar kursus yang diikuti bersifat privat untuk akun Anda.</string>
+    <string name="settings_data_section">Data &amp; akun</string>
+    <string name="settings_delete_title">Penghapusan data</string>
+    <string name="settings_delete_message">Aplikasi belum menyediakan tombol hapus akun. Untuk menghapus akun beserta data profil, aset, transaksi, postingan, dan progres belajar, hubungi pengembang agar data di Firestore dihapus manual. Anda juga dapat keluar dari akun kapan saja.</string>
+    <string name="settings_version_format">Versi %1$s</string>
+    <string name="settings_signed_out_note">Anda sudah keluar. Silakan masuk kembali untuk mengakses data akun.</string>
+
+    <!-- Account & security (Phase 9) -->
+    <string name="account_security_title">Akun &amp; keamanan</string>
+    <string name="account_security_info_section">Informasi akun</string>
+    <string name="account_security_section">Keamanan</string>
+    <string name="account_security_reset_note">Tautan reset kata sandi dikirim oleh Firebase Authentication ke email akun Anda. Aplikasi tidak pernah melihat atau menyimpan kata sandi.</string>
+    <string name="account_security_reset_action">Kirim email reset kata sandi</string>
+    <string name="account_security_reset_confirm_title">Kirim email reset?</string>
+    <string name="account_security_reset_confirm_message">Tautan reset akan dikirim ke %1$s. Anda tetap masuk pada perangkat ini.</string>
+    <string name="account_security_reset_sent">Email reset dikirim ke %1$s. Periksa kotak masuk dan folder spam.</string>
+    <string name="account_security_reset_no_email">Akun ini tidak memiliki alamat email yang bisa dipakai.</string>
+    <string name="account_security_reset_failed">Gagal mengirim email reset.</string>
+    <string name="account_security_reset_demo_note">Catatan: akun demo memakai alamat email contoh, sehingga email reset tidak akan benar-benar sampai. Gunakan akun dengan email nyata untuk menguji fitur ini.</string>
+
+    <!-- Legal documents (Phase 9) -->
+    <string name="legal_terms_title">Syarat penggunaan</string>
+    <string name="legal_privacy_title">Kebijakan privasi</string>
+    <string name="legal_draft_note">Dokumen ini disusun untuk keperluan tugas akademik (UAS) dan bukan nasihat hukum.</string>
+    <string name="legal_terms_body">1. Layanan\nSocialvest adalah aplikasi edukasi dan pencatatan portofolio pribadi. Aplikasi tidak menyediakan layanan perantara efek, tidak mengeksekusi order, dan tidak mengelola dana pengguna.\n\n2. Bukan nasihat keuangan\nSeluruh konten, kursus, unggahan komunitas, dan angka pada aplikasi bersifat informatif. Keputusan investasi sepenuhnya tanggung jawab pengguna.\n\n3. Harga\nHarga aset berasal dari input manual pengguna atau kutipan sesekali dari Yahoo Finance dan CoinGecko. Harga dapat tertunda, tidak lengkap, atau gagal diambil, dan bukan harga real-time. Aplikasi tidak menjamin keakuratan angka.\n\n4. Akun\nPengguna bertanggung jawab menjaga kerahasiaan kata sandi dan seluruh aktivitas pada akunnya. Satu akun hanya untuk satu pengguna.\n\n5. Konten komunitas\nUnggahan adalah pendapat pengguna, bukan rekomendasi Socialvest. Konten yang melanggar hukum, menyesatkan, atau melecehkan dapat dihapus.\n\n6. Ketersediaan\nAplikasi dapat berubah, mengalami gangguan, atau dihentikan. Data tersimpan di Firebase dan dapat hilang jika layanan dihentikan.\n\n7. Perubahan\nKetentuan dapat diperbarui dan versi terbaru ditampilkan pada layar ini.</string>
+    <string name="legal_privacy_body">1. Data yang dikumpulkan\n- Nama lengkap, username, bio, dan email saat mendaftar.\n- Postingan, komentar, dan suka.\n- Data aset dan transaksi portofolio (harga, jumlah, dan biaya).\n\n2. Data yang tidak diminta\nAplikasi tidak meminta nomor rekening, nomor kartu, atau nomor identitas. Kata sandi dikelola oleh Firebase Authentication dan tidak disimpan di perangkat oleh aplikasi ini.\n\n3. Cara data digunakan\n- Menampilkan profil dan feed komunitas.\n- Menghitung ringkasan portofolio dan laba/rugi.\n- Menyimpan progres kursus.\n\n4. Visibilitas\n- Profil publik: nama, username, bio, dan unggahan.\n- Portofolio, transaksi, dan progres kursus bersifat privat; hanya pemilik akun yang dapat membacanya melalui aturan Firestore.\n\n5. Layanan pihak ketiga\n- Firebase Authentication dan Cloud Firestore (Google) menyimpan akun dan data aplikasi.\n- Yahoo Finance dan CoinGecko menerima permintaan simbol atau ticker saat harga diperbarui. Tidak ada data akun yang dikirim ke sana.\n\n6. Penyimpanan dan penghapusan\nData disimpan selama akun aktif. Penghapusan akun belum tersedia otomatis di aplikasi; pengguna dapat meminta penghapusan kepada pengembang dan data akan dihapus dari Authentication serta Firestore.\n\n7. Keamanan\nAkses data dibatasi oleh aturan Firestore berbasis pemilik (UID). Meski begitu, tidak ada sistem yang sepenuhnya bebas risiko.\n\n8. Anak-anak\nAplikasi tidak ditujukan untuk pengguna di bawah 17 tahun.\n\n9. Perubahan kebijakan\nKebijakan dapat diperbarui dan versi terbaru ditampilkan pada layar ini.</string>
+
+    <!-- Validation messages -->
+    <string name="error_email_required">Email wajib diisi.</string>
+    <string name="error_email_invalid">Format email tidak valid.</string>
+    <string name="error_password_required">Kata sandi wajib diisi.</string>
+    <string name="error_password_short">Kata sandi minimal 6 karakter.</string>
+    <string name="error_password_mismatch">Kata sandi tidak sama.</string>
+    <string name="error_name_short">Nama minimal 2 karakter.</string>
+    <string name="error_name_long">Nama maksimal 60 karakter.</string>
+    <string name="error_username_required">Username wajib diisi.</string>
+    <string name="error_username_invalid">Username hanya boleh huruf kecil, angka, atau garis bawah (3–20 karakter).</string>
+    <string name="error_bio_too_long">Bio maksimal 160 karakter.</string>
+
+    <!-- Firebase error messages -->
+    <string name="error_invalid_credential">Email atau kata sandi salah.</string>
+    <string name="error_email_in_use">Email sudah terdaftar. Silakan masuk atau gunakan email lain.</string>
+    <string name="error_too_many_requests">Terlalu banyak percobaan. Coba lagi beberapa saat lagi.</string>
+    <string name="error_network">Tidak dapat terhubung ke server. Periksa koneksi internet Anda.</string>
+    <string name="error_requires_recent_login">Sesi sudah terlalu lama. Silakan masuk kembali.</string>
+    <string name="error_operation_not_allowed">Metode masuk ini belum diaktifkan pada proyek Firebase.</string>
+    <string name="error_permission_denied">Akses ditolak oleh Firestore. Pastikan aturan keamanan sudah dipublikasikan.</string>
+    <string name="error_unknown">Terjadi kesalahan. Silakan coba lagi.</string>
+
+    <!-- Asset categories -->
+    <string name="category_stock">Saham</string>
+    <string name="category_crypto">Kripto</string>
+    <string name="category_mutual_fund">Reksa Dana</string>
+    <string name="category_gold">Emas</string>
+    <string name="category_bond">Obligasi</string>
+    <string name="category_other">Lainnya</string>
+
+    <!-- Invest -->
+    <string name="invest_value_label">Nilai portfolio</string>
+    <string name="invest_cost_label">Total modal</string>
+    <string name="invest_unrealized_label">Unrealized P/L</string>
+    <string name="invest_realized_label">Realisasi P/L</string>
+    <string name="invest_manual_note">Harga berasal dari input manual atau refresh otomatis sumber publik. Bukan harga pasar real-time.</string>
+    <string name="invest_empty_title">Belum ada aset</string>
+    <string name="invest_empty_message">Tambahkan aset pertama Anda untuk mulai mencatat pembelian, penjualan, dan laba/rugi. Harga bisa diisi manual atau di-refresh otomatis.</string>
+    <string name="invest_add_asset">Tambah Aset</string>
+    <string name="invest_asset_count">%1$d aset</string>
+    <string name="invest_assets_section">Aset Anda</string>
+    <string name="invest_qty_format">%1$s unit</string>
+    <string name="invest_avg_format">Rata-rata %1$s</string>
+    <string name="invest_return_format">Return %1$s</string>
+    <string name="invest_realized_format">Realisasi %1$s</string>
+    <string name="value_undefined">—</string>
+    <string name="value_not_available">Belum tersedia</string>
+
+    <!-- Automatic price refresh (CoinGecko / Yahoo Finance) -->
+    <string name="invest_refresh_all">Refresh semua</string>
+    <string name="invest_refresh_confirm_title">Perbarui semua harga?</string>
+    <string name="invest_refresh_confirm_message">Harga kripto, saham, dan emas akan diambil dari sumber publik gratis (CoinGecko dan Yahoo Finance). Reksa dana dan obligasi tetap memakai harga manual. Data dapat tertunda dan bukan harga real-time.</string>
+    <string name="invest_refresh_confirm_action">Perbarui</string>
+    <string name="invest_refresh_progress">Memperbarui %1$d/%2$d…</string>
+    <string name="invest_refresh_result_title">Refresh selesai</string>
+    <string name="invest_refresh_summary">%1$d diperbarui · %2$d gagal · %3$d tetap manual</string>
+    <string name="invest_refresh_updated_at">Diperbarui %1$s</string>
+    <string name="invest_refresh_failed_header">Gagal:</string>
+    <string name="invest_refresh_manual_header">Tetap manual:</string>
+    <string name="invest_refresh_line">• %1$s — %2$s</string>
+    <string name="invest_refresh_more">• … dan %1$d lainnya</string>
+    <string name="invest_refresh_attribution">Data: CoinGecko / Yahoo Finance. Harga dapat tertunda; bukan harga real-time.</string>
+    <string name="invest_refresh_none_supported">Tidak ada aset yang bisa diperbarui otomatis.</string>
+    <string name="invest_refresh_failure_not_found">simbol tidak ditemukan</string>
+    <string name="invest_refresh_failure_no_data">harga tidak tersedia</string>
+    <string name="invest_refresh_failure_network">gagal terhubung</string>
+    <string name="invest_refresh_failure_rate_limited">dibatasi penyedia, coba lagi nanti</string>
+    <string name="invest_refresh_failure_currency">mata uang tidak didukung</string>
+    <string name="invest_refresh_failure_invalid">respons provider tidak valid</string>
+    <string name="invest_refresh_failure_provider">gangguan penyedia</string>
+    <string name="invest_refresh_manual_unsupported">kategori ini belum punya sumber gratis</string>
+    <string name="invest_refresh_manual_missing_ticker">ticker kosong atau tidak dikenali</string>
+    <string name="invest_refresh_manual_limit">melebihi batas 10 aset per refresh</string>
+
+    <string name="label_asset_name">Nama aset</string>
+    <string name="label_ticker">Kode / ticker</string>
+    <string name="label_category">Kategori</string>
+    <string name="label_current_price">Harga saat ini (manual)</string>
+    <string name="label_quantity">Jumlah unit</string>
+    <string name="label_price_per_unit">Harga per unit (manual)</string>
+    <string name="label_fee">Biaya transaksi</string>
+    <string name="label_date">Tanggal transaksi</string>
+    <string name="label_notes">Catatan (opsional)</string>
+    <string name="helper_asset_name">Contoh: Bank Central Asia.</string>
+    <string name="helper_ticker">Opsional, maksimal 10 karakter. Contoh: BBCA.</string>
+    <string name="helper_fee">Isi 0 jika tidak ada biaya.</string>
+    <string name="helper_price_manual">Harga input manual, bukan harga pasar real-time.</string>
+    <string name="helper_quantity">Boleh desimal dengan koma. Contoh: 0,5.</string>
+
+    <string name="asset_form_add_title">Tambah Aset</string>
+    <string name="asset_form_edit_title">Edit Aset</string>
+    <string name="asset_form_opening_title">Pembelian awal (opsional)</string>
+    <string name="asset_form_opening_hint">Catat pembelian pertama sekarang agar nilai dan harga rata-rata langsung terisi.</string>
+    <string name="asset_form_opening_toggle">Catat pembelian awal sekarang</string>
+    <string name="asset_form_price_edit_note">Harga manual hanya dapat diperbarui dari halaman detail aset.</string>
+    <string name="asset_form_save">Simpan Aset</string>
+    <string name="asset_form_saved">Aset tersimpan.</string>
+
+    <string name="asset_detail_title">Detail Aset</string>
+    <string name="asset_detail_manual_note">Harga manual — bukan harga pasar real-time. Perbarui sendiri sesuai sumber yang Anda percaya.</string>
+    <string name="asset_detail_update_price">Perbarui Harga</string>
+    <string name="asset_detail_holdings">Kepemilikan</string>
+    <string name="asset_detail_value">Nilai saat ini</string>
+    <string name="asset_detail_average">Harga rata-rata</string>
+    <string name="asset_detail_current_price">Harga manual</string>
+    <string name="asset_detail_current_price_auto">Harga otomatis (bukan real-time)</string>
+    <string name="asset_detail_auto_note">Harga %1$s via %2$s, diperbarui %3$s. Bukan harga real-time dan dapat tertunda.</string>
+    <string name="asset_detail_gold_note">Emas memakai acuan emas dunia (GC=F) per gram, bukan harga Antam/Logam Mulia.</string>
+    <string name="asset_detail_auto_time_unknown">waktu tidak tercatat</string>
+    <string name="price_source_coingecko">CoinGecko</string>
+    <string name="price_source_yahoo">Yahoo Finance</string>
+    <string name="asset_detail_realized">Laba/rugi realisasi</string>
+    <string name="asset_detail_transactions">Riwayat transaksi</string>
+    <string name="asset_detail_no_transactions">Belum ada transaksi tercatat untuk aset ini.</string>
+    <string name="asset_detail_buy">Beli</string>
+    <string name="asset_detail_sell">Jual</string>
+    <string name="asset_detail_delete">Hapus aset</string>
+    <string name="asset_detail_edit">Edit</string>
+    <string name="asset_detail_price_dialog_title">Perbarui harga manual</string>
+    <string name="asset_detail_price_updated">Harga manual diperbarui.</string>
+    <string name="asset_detail_deleted">Aset dan riwayat transaksinya dihapus.</string>
+    <string name="asset_detail_transaction_deleted">Transaksi dihapus dan perhitungan diperbarui.</string>
+    <string name="asset_delete_confirm_title">Hapus aset?</string>
+    <string name="asset_delete_confirm_message">Aset “%1$s” beserta seluruh riwayat transaksinya akan dihapus permanen. Tindakan ini tidak bisa dibatalkan.</string>
+    <string name="transaction_delete_confirm_title">Hapus transaksi?</string>
+    <string name="transaction_delete_confirm_message">Transaksi ini akan dihapus dan harga rata-rata serta laba/rugi akan dihitung ulang dari transaksi yang tersisa.</string>
+    <string name="transaction_delete_blocked">Transaksi tidak dapat dihapus karena akan membuat riwayat penjualan tidak valid.</string>
+    <string name="delete">Hapus</string>
+
+    <string name="transaction_buy_title">Catat Pembelian</string>
+    <string name="transaction_sell_title">Catat Penjualan</string>
+    <string name="transaction_buy">Beli (BUY)</string>
+    <string name="transaction_sell">Jual (SELL)</string>
+    <string name="transaction_buy_short">Beli</string>
+    <string name="transaction_sell_short">Jual</string>
+    <string name="transaction_available">Dimiliki: %1$s unit</string>
+    <string name="transaction_preview_average">Harga rata-rata setelah transaksi: %1$s</string>
+    <string name="transaction_preview_realized">Laba/rugi realisasi: %1$s</string>
+    <string name="transaction_saved">Transaksi tersimpan.</string>
+    <string name="transaction_save">Simpan Transaksi</string>
+    <string name="transaction_pick_date">Pilih tanggal</string>
+    <string name="transaction_detail_format">%1$s unit × %2$s</string>
+    <string name="transaction_fee_format">Biaya %1$s</string>
+
+    <string name="error_asset_name_short">Nama aset minimal 2 karakter.</string>
+    <string name="error_asset_name_long">Nama aset maksimal 60 karakter.</string>
+    <string name="error_ticker_invalid">Kode aset maksimal 10 karakter (huruf, angka, titik, atau strip).</string>
+    <string name="error_price_required">Harga wajib diisi.</string>
+    <string name="error_price_invalid">Harga tidak valid. Contoh: 10.000 atau 10.000,50.</string>
+    <string name="error_price_positive">Harga harus lebih dari 0.</string>
+    <string name="error_quantity_required">Jumlah unit wajib diisi.</string>
+    <string name="error_quantity_invalid">Jumlah unit tidak valid. Contoh: 10 atau 0,5.</string>
+    <string name="error_quantity_positive">Jumlah unit harus lebih dari 0.</string>
+    <string name="error_fee_invalid">Biaya transaksi tidak valid.</string>
+    <string name="error_sell_exceeds">Jumlah jual melebihi kepemilikan (%1$s unit).</string>
+    <string name="error_asset_not_found">Aset tidak ditemukan atau sudah dihapus.</string>
+
+    <!-- Social -->
+    <string name="social_feed_caption">Diskusi dan pengalaman sesama investor. Semua post adalah opini pengguna, bukan nasihat keuangan terverifikasi.</string>
+    <string name="social_create_post">Buat Post</string>
+    <string name="social_empty_title">Belum ada postingan</string>
+    <string name="social_empty_message">Mulai diskusi pertama: bagikan pengalaman, pertanyaan, atau pelajaran investasi Anda.</string>
+    <string name="social_load_more">Muat lebih banyak</string>
+    <string name="social_like">Suka</string>
+    <string name="social_unlike">Batal suka</string>
+    <string name="social_comment">Komentar</string>
+    <string name="social_author_format">\@%1$s</string>
+    <string name="social_time_unknown">waktu tidak tercatat</string>
+    <string name="social_open_profile">Buka profil %1$s</string>
+    <string name="social_post_title">Buat Post</string>
+    <string name="social_post_hint">Ceritakan pengalaman atau pertanyaan investasi Anda…</string>
+    <string name="social_post_helper">Maksimal 2.000 karakter. Post adalah opini pengguna, bukan nasihat keuangan.</string>
+    <string name="social_post_category">Topik</string>
+    <string name="social_post_submit">Terbitkan</string>
+    <string name="social_post_edit_title">Edit Postingan</string>
+    <string name="social_post_save">Simpan perubahan</string>
+    <string name="social_post_updated">Postingan diperbarui.</string>
+    <string name="social_post_published">Postingan diterbitkan.</string>
+    <string name="social_post_error_empty">Tulis isi postingan terlebih dahulu.</string>
+    <string name="social_post_error_long">Isi postingan maksimal 2.000 karakter.</string>
+    <string name="social_detail_title">Postingan</string>
+    <string name="social_detail_missing">Postingan tidak ditemukan atau sudah dihapus.</string>
+    <string name="social_comments_section">Komentar</string>
+    <string name="social_comment_count">%1$d komentar</string>
+    <string name="social_no_comments">Belum ada komentar. Jadilah yang pertama.</string>
+    <string name="social_comment_hint">Tulis komentar…</string>
+    <string name="social_comment_send">Kirim</string>
+    <string name="social_comment_error_empty">Komentar tidak boleh kosong.</string>
+    <string name="social_comment_error_long">Komentar maksimal 1.000 karakter.</string>
+    <string name="social_comment_deleted">Komentar dihapus.</string>
+    <string name="social_delete_comment">Hapus komentar</string>
+    <string name="social_post_deleted">Postingan dihapus.</string>
+    <string name="social_delete_post">Hapus postingan</string>
+    <string name="social_edit_post">Edit postingan</string>
+    <string name="social_delete_post_title">Hapus postingan?</string>
+    <string name="social_delete_post_message">Postingan ini akan dihapus permanen beserta komentarnya.</string>
+    <string name="social_delete_comment_title">Hapus komentar?</string>
+    <string name="social_delete_comment_message">Komentar ini akan dihapus permanen.</string>
+    <string name="social_public_profile_title">Profil Pengguna</string>
+    <string name="social_public_profile_no_bio">Belum menambahkan bio.</string>
+    <string name="social_public_profile_joined">Bergabung %1$s</string>
+    <string name="social_public_profile_missing">Profil pengguna ini tidak tersedia.</string>
+    <string name="social_disclaimer">Postingan komunitas adalah opini pengguna dan bukan rekomendasi investasi.</string>
+
+    <!-- Learning -->
+    <string name="learn_caption">Materi video dari YouTube</string>
+    <string name="learn_source_caption">%1$d video dari kanal %2$s. Video diputar langsung dari YouTube; aplikasi tidak mengunduh materi.</string>
+    <string name="learn_source_open">Buka playlist</string>
+    <string name="learn_source_unavailable">Aplikasi YouTube atau browser tidak tersedia.</string>
+    <string name="learn_module_count">%1$d modul</string>
+    <string name="learn_empty_title">Belum ada kursus</string>
+    <string name="learn_empty_message">Belum ada kursus yang dipublikasikan. Materi baru akan muncul di sini setelah ditambahkan.</string>
+    <string name="learn_error_retry">Coba lagi</string>
+    <string name="learn_course_count">%1$d kursus</string>
+    <string name="learn_by_instructor">oleh %1$s</string>
+    <string name="learn_not_started">Belum dimulai</string>
+    <string name="learn_progress_modules">%1$d modul selesai</string>
+    <string name="learn_status_enrolled">Diikuti</string>
+    <string name="learn_status_completed">Selesai</string>
+    <string name="learn_disclaimer">Materi belajar disusun untuk edukasi. Tetap lakukan riset sendiri sebelum mengambil keputusan investasi.</string>
+
+    <string name="course_detail_missing">Kursus tidak ditemukan atau sudah tidak dipublikasikan.</string>
+    <string name="course_detail_title">Detail kursus</string>
+    <string name="course_detail_thumbnail_desc">Sampul kursus</string>
+    <string name="course_detail_progress_format">%1$d dari %2$d modul selesai</string>
+    <string name="course_detail_percent_format">%1$d%% selesai</string>
+    <string name="course_detail_modules_section">Modul</string>
+    <string name="course_detail_no_modules">Belum ada modul untuk kursus ini.</string>
+    <string name="course_detail_start">Mulai kursus</string>
+    <string name="course_detail_enrolled">Kursus diikuti</string>
+    <string name="course_detail_enroll_success">Kursus dimulai.</string>
+    <string name="course_detail_open_module">Buka modul %1$s</string>
+    <string name="course_detail_module_done">Selesai</string>
+    <string name="course_detail_source_note">Sumber video: playlist YouTube kanal %1$s. Video diputar langsung dari YouTube; aplikasi tidak mengunduh materi.</string>
+    <string name="course_detail_source_open">Buka playlist di YouTube</string>
+
+    <string name="module_title">Materi</string>
+    <string name="module_missing">Modul tidak ditemukan.</string>
+    <string name="module_video_missing">Video untuk modul ini belum tersedia.</string>
+    <string name="module_mark_done">Tandai selesai</string>
+    <string name="module_mark_undone">Batalkan selesai</string>
+    <string name="module_marked_done">Modul ditandai selesai.</string>
+    <string name="module_marked_undone">Tanda selesai dibatalkan.</string>
+    <string name="module_open_youtube">Buka di YouTube</string>
+    <string name="module_youtube_unavailable">Aplikasi YouTube tidak tersedia di perangkat ini.</string>
+    <string name="module_description_section">Tentang modul</string>
+    <string name="module_youtube_note">Video diputar langsung dari YouTube; aplikasi tidak mengunduh materi.</string>
+    <string name="module_progress_note">Progres disimpan sebagai status selesai per modul. Posisi tontonan tidak disimpan.</string>
+    <string name="module_no_course_title">Materi belajar</string>
+
+    <string name="level_beginner">Pemula</string>
+    <string name="level_intermediate">Menengah</string>
+    <string name="level_advanced">Lanjutan</string>
+</resources>

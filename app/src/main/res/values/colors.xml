@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand: navy primary, emerald secondary (light theme) -->
+    <color name="primary">#0F2C59</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#DCE7FB</color>
+    <color name="on_primary_container">#0A1F44</color>
+
+    <color name="secondary">#0E9F6E</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#D1FAE5</color>
+    <color name="on_secondary_container">#065F46</color>
+
+    <color name="surface">#FFFFFF</color>
+    <color name="on_surface">#101828</color>
+    <color name="surface_variant">#EEF2F6</color>
+    <color name="on_surface_variant">#5A6675</color>
+    <color name="background">#F6F8FB</color>
+    <color name="outline">#D0D5DD</color>
+
+    <!-- Semantic colours: always paired with text or icons, never colour alone -->
+    <color name="gain">#12B76A</color>
+    <color name="loss">#F04438</color>
+    <color name="warning">#F79009</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

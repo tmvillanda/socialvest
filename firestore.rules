@@ -1,0 +1,241 @@
+rules_version = '2';
+
+// Socialvest — Firestore security rules.
+// Publish from Firebase Console → Firestore Database → Rules, or run:
+//   firebase deploy --only firestore:rules
+//
+// Principles:
+// - Deny by default.
+// - Ownership is always derived from request.auth.uid, never from client input.
+// - Private financial data is readable only by its owner.
+// - Clients cannot grant themselves a role, or change moderation fields.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- helpers ----------
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function uid() {
+      return request.auth.uid;
+    }
+
+    function unchanged(field) {
+      return request.resource.data[field] == resource.data[field];
+    }
+
+    function serverTime(field) {
+      return request.resource.data[field] == request.time;
+    }
+
+    // Optional price provenance (see Asset.kt). Older documents are still
+    // accepted because every field is guarded by a presence check.
+    function validPriceMetadata() {
+      return (!request.resource.data.keys().hasAny(['priceSource'])
+              || request.resource.data.priceSource in ['manual', 'coingecko', 'yahoo'])
+          && (!request.resource.data.keys().hasAny(['priceSymbol'])
+              || request.resource.data.priceSymbol is string)
+          && (!request.resource.data.keys().hasAny(['priceUpdatedAt'])
+              || request.resource.data.priceUpdatedAt is timestamp);
+    }
+
+    // ================= users (public profile) =================
+    // `email` is deliberately not stored here: Firebase Auth owns it and this
+    // document is readable by other signed-in users.
+    match /users/{userId} {
+      allow get: if signedIn();
+      allow list: if signedIn() && request.query.limit <= 50;
+
+      allow create: if signedIn()
+        && userId == uid()
+        && request.resource.data.uid == uid()
+        && request.resource.data.role == 'user'          // cannot self-register as admin
+        && request.resource.data.isActive == true
+        && request.resource.data.fullName is string
+        && request.resource.data.fullName.size() >= 2
+        && request.resource.data.fullName.size() <= 60
+        && serverTime('createdAt');
+
+      allow update: if signedIn()
+        && userId == uid()
+        && unchanged('uid')
+        && unchanged('role')                              // cannot raise own role
+        && unchanged('isActive')
+        && unchanged('createdAt')
+        && request.resource.data.fullName is string
+        && request.resource.data.fullName.size() >= 2;
+
+      allow delete: if false;                             // handled by a trusted process
+    }
+
+    // ================= private portfolio data =================
+    match /portfolios/{portfolioId} {
+      allow read:   if signedIn() && resource.data.userId == uid();
+      allow create: if signedIn() && request.resource.data.userId == uid()
+                    && request.resource.data.currency is string;
+      allow update: if signedIn() && resource.data.userId == uid()
+                    && request.resource.data.userId == uid();
+      allow delete: if signedIn() && resource.data.userId == uid();
+    }
+
+    match /assets/{assetId} {
+      allow read:   if signedIn() && resource.data.userId == uid();
+      allow create: if signedIn() && request.resource.data.userId == uid()
+                    && request.resource.data.assetName is string
+                    && request.resource.data.assetName.size() > 0
+                    && request.resource.data.quantity is number
+                    && request.resource.data.quantity >= 0
+                    && request.resource.data.currentPrice is number
+                    && request.resource.data.currentPrice >= 0
+                    && validPriceMetadata();
+      allow update: if signedIn() && resource.data.userId == uid()
+                    && request.resource.data.userId == uid()
+                    && validPriceMetadata();
+      allow delete: if signedIn() && resource.data.userId == uid();
+    }
+
+    match /transactions/{transactionId} {
+      allow read:   if signedIn() && resource.data.userId == uid();
+      allow create: if signedIn() && request.resource.data.userId == uid()
+                    && request.resource.data.type in ['BUY', 'SELL']
+                    && request.resource.data.quantity is number
+                    && request.resource.data.quantity > 0
+                    && request.resource.data.pricePerUnit is number
+                    && request.resource.data.pricePerUnit >= 0
+                    && request.resource.data.fee is number
+                    && request.resource.data.fee >= 0;
+      allow update: if signedIn() && resource.data.userId == uid()
+                    && request.resource.data.userId == uid();
+      allow delete: if signedIn() && resource.data.userId == uid();
+    }
+
+    // ================= social =================
+    match /posts/{postId} {
+      allow read: if signedIn() && resource.data.status == 'published';
+
+      allow create: if signedIn()
+        && request.resource.data.userId == uid()
+        && request.resource.data.status == 'published'
+        && request.resource.data.likeCount == 0
+        && request.resource.data.commentCount == 0
+        && request.resource.data.content is string
+        && request.resource.data.content.size() > 0
+        && request.resource.data.content.size() <= 2000;
+
+      // Owner edits the content but cannot touch the counters.
+      allow update: if signedIn()
+        && resource.data.userId == uid()
+        && request.resource.data.userId == uid()
+        && request.resource.data.likeCount == resource.data.likeCount
+        && request.resource.data.commentCount == resource.data.commentCount
+        && unchanged('status')
+        && unchanged('createdAt');
+
+      // Other signed-in users may only move the counters by one step.
+      allow update: if signedIn()
+        && request.resource.data.userId == resource.data.userId
+        && unchanged('content')
+        && unchanged('category')
+        && unchanged('status')
+        && unchanged('createdAt')
+        && request.resource.data.likeCount >= 0
+        && request.resource.data.commentCount >= 0
+        && (request.resource.data.likeCount == resource.data.likeCount
+            || request.resource.data.likeCount == resource.data.likeCount + 1
+            || request.resource.data.likeCount == resource.data.likeCount - 1)
+        && (request.resource.data.commentCount == resource.data.commentCount
+            || request.resource.data.commentCount == resource.data.commentCount + 1
+            || request.resource.data.commentCount == resource.data.commentCount - 1);
+
+      allow delete: if signedIn() && resource.data.userId == uid();
+
+      // Like document id is the UID, which makes duplicate likes impossible.
+      match /likes/{likeUserId} {
+        allow read:   if signedIn();
+        allow create: if signedIn() && likeUserId == uid()
+                      && request.resource.data.userId == uid()
+                      && serverTime('createdAt');
+        allow delete: if signedIn() && likeUserId == uid();
+        allow update: if false;
+      }
+
+      match /comments/{commentId} {
+        allow read:   if signedIn();
+        allow create: if signedIn()
+                      && request.resource.data.userId == uid()
+                      && request.resource.data.content is string
+                      && request.resource.data.content.size() > 0
+                      && request.resource.data.content.size() <= 1000
+                      && serverTime('createdAt');
+        allow update: if signedIn() && resource.data.userId == uid()
+                      && request.resource.data.userId == uid();
+        // Author of the comment or owner of the post may delete.
+        allow delete: if signedIn() && (
+                        resource.data.userId == uid()
+                        || get(/databases/$(database)/documents/posts/$(postId)).data.userId == uid()
+                      );
+      }
+    }
+
+    match /follows/{followId} {
+      allow read:   if signedIn();
+      allow create: if signedIn()
+                    && request.resource.data.followerId == uid()
+                    && followId == uid() + '_' + request.resource.data.followingId
+                    && serverTime('createdAt');
+      allow delete: if signedIn() && resource.data.followerId == uid();
+      allow update: if false;
+    }
+
+    // ================= learning =================
+    match /courses/{courseId} {
+      allow get, list: if signedIn() && resource.data.isPublished == true;
+      allow write: if false;                              // seeded via Console / Admin SDK
+
+      match /modules/{moduleId} {
+        allow read:  if signedIn();
+        allow write: if false;
+      }
+    }
+
+    match /enrollments/{enrollmentId} {
+      allow read:   if signedIn() && resource.data.userId == uid();
+      allow create: if signedIn()
+                    && request.resource.data.userId == uid()
+                    && enrollmentId == uid() + '_' + string(request.resource.data.courseId)
+                    && serverTime('enrolledAt');
+      allow update: if signedIn() && resource.data.userId == uid()
+                    && request.resource.data.userId == uid();
+      allow delete: if signedIn() && resource.data.userId == uid();
+    }
+
+    match /progress/{progressId} {
+      allow read:   if signedIn() && resource.data.userId == uid();
+      allow create: if signedIn()
+                    && request.resource.data.userId == uid()
+                    && request.resource.data.lastPositionSeconds is number
+                    && request.resource.data.lastPositionSeconds >= 0
+                    && request.resource.data.completed is bool;
+      allow update: if signedIn() && resource.data.userId == uid()
+                    && request.resource.data.userId == uid()
+                    && request.resource.data.lastPositionSeconds is number
+                    && request.resource.data.lastPositionSeconds >= 0;
+      allow delete: if signedIn() && resource.data.userId == uid();
+    }
+
+    // ================= moderation (optional) =================
+    match /reports/{reportId} {
+      allow create: if signedIn()
+                    && request.resource.data.reporterId == uid()
+                    && serverTime('createdAt');
+      allow read, update, delete: if false;                // reviewed in Console
+    }
+
+    // Default deny (implicit, kept explicit for clarity).
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
